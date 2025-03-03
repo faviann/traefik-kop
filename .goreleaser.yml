@@ -31,21 +31,21 @@ changelog:
       - "^test:"
 dockers:
   - image_templates:
-      ["ghcr.io/jittering/{{ .ProjectName }}:{{ .Version }}-amd64"]
+      ["ghcr.io/faviann/{{ .ProjectName }}:{{ .Version }}-amd64"]
     dockerfile: Dockerfile
     use: buildx
     build_flag_templates:
       - --platform=linux/amd64
       - --label=org.opencontainers.image.title={{ .ProjectName }}
       - --label=org.opencontainers.image.description={{ .ProjectName }}
-      - --label=org.opencontainers.image.url=https://github.com/jittering/{{ .ProjectName }}
-      - --label=org.opencontainers.image.source=https://github.com/jittering/{{ .ProjectName }}
+      - --label=org.opencontainers.image.url=https://github.com/faviann/{{ .ProjectName }}
+      - --label=org.opencontainers.image.source=https://github.com/faviann/{{ .ProjectName }}
       - --label=org.opencontainers.image.version={{ .Version }}
       - --label=org.opencontainers.image.created={{ time "2006-01-02T15:04:05Z07:00" }}
       - --label=org.opencontainers.image.revision={{ .FullCommit }}
       - --label=org.opencontainers.image.licenses=MIT
   - image_templates:
-      ["ghcr.io/jittering/{{ .ProjectName }}:{{ .Version }}-armv6"]
+      ["ghcr.io/faviann/{{ .ProjectName }}:{{ .Version }}-armv6"]
     goarch: arm
     goarm: "6"
     dockerfile: Dockerfile
@@ -54,14 +54,14 @@ dockers:
       - --platform=linux/arm/v6
       - --label=org.opencontainers.image.title={{ .ProjectName }}
       - --label=org.opencontainers.image.description={{ .ProjectName }}
-      - --label=org.opencontainers.image.url=https://github.com/jittering/{{ .ProjectName }}
-      - --label=org.opencontainers.image.source=https://github.com/jittering/{{ .ProjectName }}
+      - --label=org.opencontainers.image.url=https://github.com/faviann/{{ .ProjectName }}
+      - --label=org.opencontainers.image.source=https://github.com/faviann/{{ .ProjectName }}
       - --label=org.opencontainers.image.version={{ .Version }}
       - --label=org.opencontainers.image.created={{ time "2006-01-02T15:04:05Z07:00" }}
       - --label=org.opencontainers.image.revision={{ .FullCommit }}
       - --label=org.opencontainers.image.licenses=MIT
   - image_templates:
-      ["ghcr.io/jittering/{{ .ProjectName }}:{{ .Version }}-armv7"]
+      ["ghcr.io/faviann/{{ .ProjectName }}:{{ .Version }}-armv7"]
     goarch: arm
     goarm: "7"
     dockerfile: Dockerfile
@@ -70,14 +70,14 @@ dockers:
       - --platform=linux/arm/v7
       - --label=org.opencontainers.image.title={{ .ProjectName }}
       - --label=org.opencontainers.image.description={{ .ProjectName }}
-      - --label=org.opencontainers.image.url=https://github.com/jittering/{{ .ProjectName }}
-      - --label=org.opencontainers.image.source=https://github.com/jittering/{{ .ProjectName }}
+      - --label=org.opencontainers.image.url=https://github.com/faviann/{{ .ProjectName }}
+      - --label=org.opencontainers.image.source=https://github.com/faviann/{{ .ProjectName }}
       - --label=org.opencontainers.image.version={{ .Version }}
       - --label=org.opencontainers.image.created={{ time "2006-01-02T15:04:05Z07:00" }}
       - --label=org.opencontainers.image.revision={{ .FullCommit }}
       - --label=org.opencontainers.image.licenses=MIT
   - image_templates:
-      ["ghcr.io/jittering/{{ .ProjectName }}:{{ .Version }}-arm64v8"]
+      ["ghcr.io/faviann/{{ .ProjectName }}:{{ .Version }}-arm64v8"]
     goarch: arm64
     dockerfile: Dockerfile
     use: buildx
@@ -85,22 +85,22 @@ dockers:
       - --platform=linux/arm64/v8
       - --label=org.opencontainers.image.title={{ .ProjectName }}
       - --label=org.opencontainers.image.description={{ .ProjectName }}
-      - --label=org.opencontainers.image.url=https://github.com/jittering/{{ .ProjectName }}
-      - --label=org.opencontainers.image.source=https://github.com/jittering/{{ .ProjectName }}
+      - --label=org.opencontainers.image.url=https://github.com/faviann/{{ .ProjectName }}
+      - --label=org.opencontainers.image.source=https://github.com/faviann/{{ .ProjectName }}
       - --label=org.opencontainers.image.version={{ .Version }}
       - --label=org.opencontainers.image.created={{ time "2006-01-02T15:04:05Z07:00" }}
       - --label=org.opencontainers.image.revision={{ .FullCommit }}
       - --label=org.opencontainers.image.licenses=MIT
 docker_manifests:
-  - name_template: ghcr.io/jittering/{{ .ProjectName }}:{{ .Version }}
+  - name_template: ghcr.io/faviann/{{ .ProjectName }}:{{ .Version }}
     image_templates:
-      - ghcr.io/jittering/{{ .ProjectName }}:{{ .Version }}-amd64
-      - ghcr.io/jittering/{{ .ProjectName }}:{{ .Version }}-armv6
-      - ghcr.io/jittering/{{ .ProjectName }}:{{ .Version }}-armv7
-      - ghcr.io/jittering/{{ .ProjectName }}:{{ .Version }}-arm64v8
-  - name_template: ghcr.io/jittering/{{ .ProjectName }}:latest
+      - ghcr.io/faviann/{{ .ProjectName }}:{{ .Version }}-amd64
+      - ghcr.io/faviann/{{ .ProjectName }}:{{ .Version }}-armv6
+      - ghcr.io/faviann/{{ .ProjectName }}:{{ .Version }}-armv7
+      - ghcr.io/faviann/{{ .ProjectName }}:{{ .Version }}-arm64v8
+  - name_template: ghcr.io/faviann/{{ .ProjectName }}:latest
     image_templates:
-      - ghcr.io/jittering/{{ .ProjectName }}:{{ .Version }}-amd64
-      - ghcr.io/jittering/{{ .ProjectName }}:{{ .Version }}-armv6
-      - ghcr.io/jittering/{{ .ProjectName }}:{{ .Version }}-armv7
-      - ghcr.io/jittering/{{ .ProjectName }}:{{ .Version }}-arm64v8
+      - ghcr.io/faviann/{{ .ProjectName }}:{{ .Version }}-amd64
+      - ghcr.io/faviann/{{ .ProjectName }}:{{ .Version }}-armv6
+      - ghcr.io/faviann/{{ .ProjectName }}:{{ .Version }}-armv7
+      - ghcr.io/faviann/{{ .ProjectName }}:{{ .Version }}-arm64v8

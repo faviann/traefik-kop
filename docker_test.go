@@ -104,7 +104,7 @@ func Test_TCP(t *testing.T) {
 }
 
 func Test_TCPMQTT(t *testing.T) {
-	// from https://github.com/jittering/traefik-kop/issues/35
+	// from https://github.com/faviann/traefik-kop/issues/35
 	store := doTest(t, "mqtt.yml", nil)
 	assertServiceIPs(t, store, []svc{
 		{"mqtt", "http", "http://192.168.100.100:9001"},
